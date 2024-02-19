@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="center">Pokémons</h1>
+  <div class="row">
+    @for (pokemon of pokemonList; track $index) {
+    <div class="col m4 s6">
+      <div class="card horizontal" appBorderCard (click)="goToPokemon(pokemon)">
+        <div class="card-image">
+          <img [src]="pokemon.picture" />
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ pokemon.name }}</p>
+            <p>
+              <small>{{ pokemon.created | date : "dd/MM/yyyy" }}</small>
+            </p>
+
+            @for (type of pokemon.types; track $index) {
+            <span class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
