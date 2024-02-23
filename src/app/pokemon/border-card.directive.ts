@@ -2,6 +2,7 @@ import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Directive({
   selector: "[appBorderCard]",
+  standalone: true,
 })
 export class BorderCardDirective {
   initialColor: string = "#f5f5f5";
